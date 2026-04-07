@@ -1,7 +1,7 @@
 "use strict"
 
 function solveEquation(a, b, c) {
-	let arr = [];
+	let arr = []
 	let D
   let X1
   let X2
@@ -20,10 +20,23 @@ function solveEquation(a, b, c) {
     console.log("Два корня")
 	}
 
-	return arr;
+	return arr
 }
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-
+	let S
+	let P
+	let monthPayment
+	let Payment
+	percent = parseFloat(percent)
+	contribution = parseFloat(contribution)
+	amount = parseInt(amount)
+	countMonths = parseInt(countMonths)
+	percent = percent / 100
+	S = amount - contribution
+	P = percent / 12
+	monthPayment = S * (P + (P / (((1 + P) ** countMonths) - 1)))
+	Payment = monthPayment * countMonths
+	return (Payment.toFixed(2))
 }
