@@ -29,14 +29,10 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	let P
 	let monthPayment
 	let Payment
-	percent = parseFloat(percent)
-	contribution = parseFloat(contribution)
-	amount = parseInt(amount)
-	countMonths = parseInt(countMonths)
 	percent = percent / 100
 	S = amount - contribution
 	P = percent / 12
 	monthPayment = S * (P + (P / (((1 + P) ** countMonths) - 1)))
 	Payment = monthPayment * countMonths
-	return (Payment.toFixed(2))
+	return parseFloat(Payment.toFixed(2))
 }
